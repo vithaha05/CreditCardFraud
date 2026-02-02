@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.vscode/
+data/
+creditcard.csv
+fraud_analysis_results.csv
