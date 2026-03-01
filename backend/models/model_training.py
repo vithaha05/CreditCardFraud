@@ -12,7 +12,7 @@ from backend.logger import get_logger
 logger = get_logger(__name__)
 
 class FraudModelTrainer:
-    def __init__(self, X_train, y_train, X_test, y_test, model_dir='models/saved'):
+    def __init__(self, X_train, y_train, X_test, y_test, model_dir='backend/models/saved'):
         self.X_train = X_train
         self.y_train = y_train
         self.X_test = X_test
