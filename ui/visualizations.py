@@ -258,9 +258,8 @@ class PlotlyVisualizer:
                 color=[subgraph.degree(n) for n in subgraph.nodes()],
                 colorbar=dict(
                     thickness=15,
-                    title="Node Degree",
-                    xanchor="left",
-                    titleside="right"
+                    title=dict(text="Node Degree", side="right"),
+                    xanchor="left"
                 ),
                 line_width=2,
                 line_color='white'
@@ -270,8 +269,7 @@ class PlotlyVisualizer:
         fig = go.Figure(
             data=[edge_trace, node_trace],
             layout=go.Layout(
-                title=f'Transaction Network Topology (Top {top_n} Nodes)',
-                titlefont_size=16,
+                title=dict(text=f'Transaction Network Topology (Top {top_n} Nodes)', font=dict(size=16)),
                 showlegend=False,
                 hovermode='closest',
                 margin=dict(b=20, l=5, r=5, t=40),
