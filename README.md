@@ -69,12 +69,28 @@ Transactions are modeled as a **Directed Graph**:
 
 ---
 
-## ☁️ Deployment (Streamlit Cloud)
-To deploy this project to Streamlit Cloud:
-1. Push this repository to GitHub.
-2. Connect your GitHub account to [Streamlit Cloud](https://streamlit.io/cloud).
-3. Select this repo and `app.py` as the main file.
-4. Ensure `creditcard.csv` is either included in the repo or uploaded via the UI.
+## 🐳 Containerized Deployment (Docker)
+
+FrauduLens can be easily containerized and deployed using Docker. This ensures a consistent environment regardless of your local machine configuration.
+
+### 1. Build the Docker Image
+Run the following command from the project root to build the container:
+```bash
+docker build -t fraudulens .
+```
+
+### 2. Run the Container
+Launch the dashboard on port `8501`:
+```bash
+docker run -p 8501:8501 fraudulens
+```
+Once the container is running, access the dashboard at: [http://localhost:8501](http://localhost:8501)
+
+### Docker Configuration
+- **Base Image**: `python:3.9-slim` for optimized image size.
+- **Port Exposure**: Exposes port `8501` for Streamlit access.
+- **Healthcheck**: Monitors dashboard availability for production stability.
+- **Persistence**: Excludes large datasets and local logs via `.dockerignore` for efficient image builds.
 
 ---
 *Production-ready system developed for Resume Excellence.*

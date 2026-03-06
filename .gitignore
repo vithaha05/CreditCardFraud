@@ -2,6 +2,6 @@ __pycache__/
 *.pyc
 .env
 .vscode/
-data/
+/data/
 creditcard.csv
 fraud_analysis_results.csv
